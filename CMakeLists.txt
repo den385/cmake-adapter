@@ -75,6 +75,8 @@ add_custom_target(INTELLISENSE
         DEPENDS core configs templates datamodel common worker server datatypes
     )
 
+####################################################
 # add forwarding-targets for building via plain make
+####################################################
 add_custom_target(total COMMAND make all config=debug_x64 -j 8 -C ${PROJECT_SOURCE_DIR} CLION_EXE_DIR=${CMAKE_BINARY_DIR})
 add_custom_target(purge COMMAND make clean config=debug_x64 -j 8 -C ${PROJECT_SOURCE_DIR} CLION_EXE_DIR=${CMAKE_BINARY_DIR})
